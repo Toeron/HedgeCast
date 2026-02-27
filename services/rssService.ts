@@ -2,12 +2,12 @@ import type { Article } from '../types';
 
 // Using a CORS proxy to fetch the RSS feed from the browser.
 // Switched to corsproxy.io as allorigins.win can be unreliable.
-const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
+const CORS_PROXY = 'https://corsproxy.io/?url=';
 
 const getElementText = (element: Element, tagName: string): string => {
-    const node = element.querySelector(tagName);
-    // Use textContent to get text from nodes, and handle CDATA sections.
-    return node?.textContent ?? '';
+  const node = element.querySelector(tagName);
+  // Use textContent to get text from nodes, and handle CDATA sections.
+  return node?.textContent ?? '';
 };
 
 
@@ -23,23 +23,23 @@ export const fetchArticles = async (rssUrl: string): Promise<Article[]> => {
 
     const errorNode = doc.querySelector('parsererror');
     if (errorNode) {
-        throw new Error('Failed to parse RSS feed.');
+      throw new Error('Failed to parse RSS feed.');
     }
-    
+
     const items = Array.from(doc.querySelectorAll('item'));
-    
+
     return items.map(item => {
       const tempDiv = document.createElement('div');
-      
+
       const descriptionHtml = getElementText(item, 'description');
       tempDiv.innerHTML = descriptionHtml;
       const description = tempDiv.textContent || tempDiv.innerText || "";
-      
+
       const contentEncodedHtml = getElementText(item, 'content\\:encoded');
       const fullHtmlContent = contentEncodedHtml || descriptionHtml;
       tempDiv.innerHTML = fullHtmlContent;
       const content = tempDiv.textContent || tempDiv.innerText || "";
-      
+
       const imageElement = tempDiv.querySelector('img');
       const imageUrl = imageElement ? imageElement.src : undefined;
 
