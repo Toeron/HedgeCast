@@ -2,7 +2,7 @@ import type { Article } from '../types';
 
 // Using a CORS proxy to fetch the RSS feed from the browser.
 // Switched to corsproxy.io as allorigins.win can be unreliable.
-const CORS_PROXY = 'https://corsproxy.io/?';
+const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
 
 const getElementText = (element: Element, tagName: string): string => {
     const node = element.querySelector(tagName);
