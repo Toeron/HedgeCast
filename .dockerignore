@@ -1,0 +1,9 @@
+node_modules
+dist
+.git
+.gitignore
+README.md
+Dockerfile
+docker-compose.yml
+.env.local
+firebase-debug.log

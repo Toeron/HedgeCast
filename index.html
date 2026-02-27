@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF--8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HedgeCast: AI News Summarizer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.27.0"
+  }
+}
+</script>
+<style>
+  .article-content h1, .article-content h2, .article-content h3, .article-content h4 {
+    color: white;
+    font-weight: 600;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+  }
+  .article-content h1 { font-size: 1.875rem; }
+  .article-content h2 { font-size: 1.5rem; }
+  .article-content h3 { font-size: 1.25rem; }
+  .article-content h4 { font-size: 1.125rem; }
+  .article-content p {
+    margin-bottom: 1em;
+    line-height: 1.6;
+    color: #d1d5db; /* slate-300 */
+  }
+  .article-content a {
+    color: #38bdf8; /* sky-400 */
+    text-decoration: underline;
+  }
+  .article-content a:hover {
+    color: #7dd3fc; /* sky-300 */
+  }
+  .article-content ul, .article-content ol {
+    margin-left: 1.5em;
+    margin-bottom: 1em;
+    list-style-position: outside;
+    color: #d1d5db; /* slate-300 */
+  }
+  .article-content ul { list-style-type: disc; }
+  .article-content ol { list-style-type: decimal; }
+  .article-content li { margin-bottom: 0.5em; }
+  .article-content img, .article-content figure {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin: 1.5em auto;
+    display: block;
+  }
+  .article-content blockquote {
+    border-left: 4px solid #475569; /* slate-600 */
+    padding-left: 1em;
+    font-style: italic;
+    color: #94a3b8; /* slate-400 */
+    margin: 1.5em 0;
+  }
+</style>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-900">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+{
+  "name": "HedgeCast: AI News Summarizer",
+  "description": "An application that fetches news articles from an RSS feed, generates a personalized audio summary using Gemini, allowing you to listen to the news on the go.",
+  "requestFramePermissions": []
+}
