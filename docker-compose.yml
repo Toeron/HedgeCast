@@ -13,7 +13,7 @@ services:
       - app-network
     environment:
       - N8N_URL=http://n8n:5678/webhook/rss-proxy
-      - API_KEY=${API_KEY}
+      - GEMINI_API_KEY=${API_KEY}
 
   n8n:
     image: n8nio/n8n:latest
