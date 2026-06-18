@@ -4,18 +4,19 @@ services:
     container_name: hedgecast-news
     restart: always
     ports:
-      - "3010:80" # This maps host port 3010 to container port 80
+      - "3010:80"
     networks:
       - app-network
     environment:
       - N8N_URL=http://n8n:5678/webhook/rss-proxy
+      - API_KEY=${API_KEY}
 
   n8n:
     image: n8nio/n8n:latest
     container_name: n8n
     restart: always
     ports:
-      - "5679:5678"
+      - "5679:5678"  # Using 5679 to avoid the "already in use" error
     networks:
       - app-network
     volumes:
