@@ -11,7 +11,7 @@ const ai = new GoogleGenAI({ apiKey: API_KEY });
 
 export const summarizeText = async (text: string): Promise<string> => {
   try {
-    const prompt = `Je bent een deskundige nieuwsanalist. Maak een beknopte, boeiende audio-samenvatting van het volgende nieuwsartikel in het Nederlands. De samenvatting moet gemakkelijk te beluisteren en te begrijpen zijn tijdens het woon-werkverkeer. Richt je op de belangrijkste punten en presenteer ze in een duidelijke, verhalende stijl. Hier is de inhoud van het artikel: \n\n"${text}"`;
+    const prompt = `Je bent een deskundige nieuwsanalist. Maak een beknopte, boeiende audio-samenvatting van het volgende nieuwsartikel in het Nederlands. De samenvatting moet gemakkelijk te beluisteren en te begrijpen. Richt je op de belangrijkste punten en presenteer ze in een duidelijke, verhalende stijl. Hier is de inhoud van het artikel: \n\n"${text}"`;
     
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
