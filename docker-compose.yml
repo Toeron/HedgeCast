@@ -1,13 +1,6 @@
-name: hedgecast-news
-
 services:
-  web:
-    image: hedgecast-news:latest
-    container_name: hedgecast-news-container
-    build:
-      context: .
-      args:
-        - GEMINI_API_KEY=${GEMINI_API_KEY}
+  hedgecast:
+    build: .
     ports:
-      - "3010:80"
+      - "3000:3000"
     restart: always
