@@ -1,8 +1,11 @@
 import type { Article } from '../types';
 
-// Using a CORS proxy to fetch the RSS feed from the browser.
-// Switched to corsproxy.io as allorigins.win can be unreliable.
-const CORS_PROXY = 'https://api.codetabs.com/v1/proxy?quest=';
+// Pointing directly to your local n8n workflow
+const RSS_FEED_URL = 'http://umbrel.local:5678/webhook-test/rss-proxy';
+
+// You can now remove the CORS_PROXY logic entirely if your app allows,
+// or just set it to an empty string:
+const CORS_PROXY = '';
 
 const getElementText = (element: Element, tagName: string): string => {
   const node = element.querySelector(tagName);
