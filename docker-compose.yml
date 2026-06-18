@@ -2,5 +2,5 @@ services:
   hedgecast:
     build: .
     ports:
-      - "3000:3000"
+      - "3010:3010"
     restart: always
